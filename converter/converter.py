@@ -1,4 +1,4 @@
-from http import server
+from http import client, server
 import socketserver
 import os
 import threading
@@ -23,4 +23,9 @@ class WebServerThread(threading.Thread):
 
 web_server_thread = WebServerThread()
 web_server_thread.start()
-pass
+
+web_client = client.HTTPConnection('localhost', port=8000)
+
+
+
+web_server_thread.web_server.server_close()
