@@ -1,4 +1,5 @@
 from http import client, server
+from lib.requests import api as requests
 import socketserver
 import os
 import threading
@@ -24,8 +25,6 @@ class WebServerThread(threading.Thread):
 web_server_thread = WebServerThread()
 web_server_thread.start()
 
-web_client = client.HTTPConnection('localhost', port=8000)
+request = requests.get('http://localhost:8000')
 
-
-
-web_server_thread.web_server.server_close()
+pass
